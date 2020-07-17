@@ -624,14 +624,16 @@ module DE1_SOC_Linux_FB(
 	
 	//assign GPIO_0[25] = en_pa;
 	//assign GPIO_0[23] = en_pa;
-	assign GPIO_0[25] = enable_rx_dly;
-	assign GPIO_0[23] = enable_rx_dly;
+	//assign GPIO_0[25] = enable_rx_dly;
+	//assign GPIO_0[23] = enable_rx_dly;
+	//assign GPIO_0[21] = nmr_rfout_p;
+	//assign GPIO_0[19] = nmr_rfout_n;
+	//assign GPIO_0[17] = nmr_rfout_n;
+	//assign GPIO_0[15] = nmr_rfout_p;
+	
+	assign GPIO_0[25] = en_pa;
+	assign GPIO_0[23] = nmr_rfout_n;
 	assign GPIO_0[21] = nmr_rfout_p;
-	assign GPIO_0[19] = nmr_rfout_n;
-	assign GPIO_0[17] = nmr_rfout_n;
-	assign GPIO_0[15] = nmr_rfout_p;
-	
-	
 	
 	/* save power by disabling the seven segments
 	assign HEX0 = 7'b1111111;
