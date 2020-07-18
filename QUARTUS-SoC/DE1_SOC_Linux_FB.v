@@ -211,7 +211,6 @@ module DE1_SOC_Linux_FB(
 	wire			pll_nmr_sys_reset;
 	wire			pll_analyzer_reset;
 	wire			nmr_controller_reset;
-	// wire			main_clock_reset;
 	
 	// parameters
 	wire	[PULSE_AND_DELAY_WIDTH-1:0]		pulse_90deg;
@@ -380,7 +379,7 @@ module DE1_SOC_Linux_FB(
 			pll_nmr_sys_locked		// PLL lock status for the NMR pulse programmer
 		}),
 		.ctrl_out_export({
-			// main_clock_reset,
+			en_pa,
 			nmr_controller_reset,
 			pll_analyzer_reset,		// analyzer_pll_reset
 			pll_nmr_sys_reset,		// nmr_system_pll reset for the FSM main controller clock
@@ -525,7 +524,7 @@ module DE1_SOC_Linux_FB(
 		.RF_OUT_N			(nmr_rfout_n),
 		
 		// nmr output enable
-		.OUT_EN				(en_pa),
+		.OUT_EN				(),
 		
 		// nmr control signals
 		.PHASE_CYCLE		(phase_cycle),
