@@ -631,9 +631,15 @@ module DE1_SOC_Linux_FB(
 	//assign GPIO_0[17] = nmr_rfout_n;
 	//assign GPIO_0[15] = nmr_rfout_p;
 	
-	assign GPIO_0[25] = en_pa;
-	assign GPIO_0[23] = nmr_rfout_n;
-	assign GPIO_0[21] = nmr_rfout_p;
+	assign GPIO_0[29] = en_pa || SW[0];
+	assign GPIO_0[26] = nmr_rfout_n;
+	assign GPIO_0[27] = nmr_rfout_p;
+	assign GPIO_0[34] = en_pa || SW[0];
+	
+	assign GPIO_1[29] = en_pa || SW[0];
+	assign GPIO_1[26] = nmr_rfout_n;
+	assign GPIO_1[27] = nmr_rfout_p;
+	assign GPIO_1[34] = en_pa || SW[0];
 	
 	/* save power by disabling the seven segments
 	assign HEX0 = 7'b1111111;
@@ -644,17 +650,17 @@ module DE1_SOC_Linux_FB(
 	assign HEX5 = 7'b1111111;
 	*/
 	
-	assign GPIO_1[11] = 1'b0;
-	assign GPIO_1[13] = 1'b0;
-	assign GPIO_1[15] = SW[0];
-	assign GPIO_1[17] = SW[1];
-	assign GPIO_1[19] = SW[2];
-	assign GPIO_1[21] = SW[3];
-	
-	assign GPIO_1[14] = SW[0];
-	assign GPIO_1[16] = SW[1];
-	assign GPIO_1[18] = SW[2];
-	assign GPIO_1[20] = SW[3];
+	//assign GPIO_1[11] = 1'b0;
+	//assign GPIO_1[13] = 1'b0;
+	//assign GPIO_1[15] = SW[0];
+	//assign GPIO_1[17] = SW[1];
+	//assign GPIO_1[19] = SW[2];
+	//assign GPIO_1[21] = SW[3];
+	//
+	//assign GPIO_1[14] = SW[0];
+	//assign GPIO_1[16] = SW[1];
+	//assign GPIO_1[18] = SW[2];
+	//assign GPIO_1[20] = SW[3];
 	
 	
 	
